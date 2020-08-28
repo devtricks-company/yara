@@ -349,4 +349,20 @@ box-shadow: 2px 6px 35px 0px rgba(0,0,0,0.75);
             @include typographyStyle($montserrat,16px ,300 ,28px ,$gray-font-color );
         }
     }
+    
+}
+.partners{
+    padding-top:2rem;
+    .container-fluid{
+        h2{
+            text-align: center;
+        }
+        .image-container{
+            width: 100%;
+            text-align: center;
+            img{
+                padding:3rem 2rem;
+            }
+        }
+    }
 }
