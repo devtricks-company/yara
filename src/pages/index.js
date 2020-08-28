@@ -5,6 +5,7 @@ import Homeintroduction from '../components/home/introduction/homeintroduction';
 import Homeabout from '../components/home/about/homeabout';
 import Roade from '../components/home/roade/roade';
 import Tesmonial from '../components/home/testemonial/tesmonial';
+import Partners from '../components/partens/partners';
 
 
 const index = () => {
@@ -15,6 +16,7 @@ const index = () => {
             <Homeabout />
             <Roade />
             <Tesmonial />
+            <Partners />
         </Layout>
     )
 }
