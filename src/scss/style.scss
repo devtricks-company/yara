@@ -1,0 +1,352 @@
+//importing fonts
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
+
+//variables-color
+$purple-color:#5e15eb;
+$white-color:white;
+$black-color:black;
+$gray-menu-color:rgba(80,80,80,1);
+$smoke-white:rgba(58, 20, 20, 0.08);
+$collpase-color-menu:#232323;
+$dark-gray:#333131;
+$gray-font-color:rgb(145,145,145);
+//variables-fonts
+$montserrat: 'Montserrat', sans-serif;
+
+
+
+//@mixin
+@mixin typographyStyle($fonts,$size,$weight,$heigt,$color) {
+    font-family: $fonts;
+    font-size: $size;
+    font-weight: $weight;
+    line-height: $heigt;
+    color:$color;
+}
+
+//general classes
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+//addressbar classes
+.addressbar{
+    width:100%;
+    padding-top:30px;
+    .container{
+        display: flex;
+        justify-content: space-between;
+    }
+    &__logo{
+       
+        img{
+            width:200px;
+        }
+    }
+    &__menu{
+        list-style: none;
+        display: flex;
+        li{
+            display: flex;
+            align-items: center;
+            padding:0 35px;
+            p{
+                margin:0;
+                padding-left:10px;
+            }
+            svg{
+                font-size:40px;
+                color:$purple-color;
+            }
+        }
+    }
+    &__title{
+        @include typographyStyle($montserrat,13px ,700 ,22.1px , $black-color);
+        text-transform: uppercase;
+    }
+    &__value{
+        @include typographyStyle($montserrat,13px , 400 , 22.1px , $black-color );
+    }
+}
+
+// navbar
+.navbar{
+    margin:2rem 0;
+    @media(max-width:992px){
+        &{
+            padding:0 !important;
+        }
+        .navbar-collapse{
+            background: $collpase-color-menu !important;
+            .main-menu{
+                padding:2rem 5rem;
+                .nav-item{
+                    border-bottom:1px solid $dark-gray;
+                    .nav-link{
+                        color:#aaaaaa;
+                    }
+                }
+            }
+            .social-menu{
+                padding:0 1rem;
+               
+                li{
+                    flex:1;
+                    text-align: center;
+                }
+            }
+        }
+    }
+    .navbar-collapse{
+        background:$white-color;
+        border-radius: 5px;
+        
+        .main-menu{
+            padding:1rem 0;
+        }
+    }
+    .nav-link{
+        @include typographyStyle($montserrat,15px ,700 ,40px ,$gray-menu-color );
+    }
+    .nav-item{
+        padding:0 20px;
+    }
+    .social-menu{
+        list-style: none;
+        display: flex;
+        margin-left:auto;
+        margin-bottom: 0;
+        .social-item{
+            padding:15px 20px;
+            border-left:1px solid $smoke-white;
+        }
+        .social-link{
+            color:$gray-menu-color;
+            transition: all 0.5s ease;
+            svg{
+                font-size:20px;
+            }
+            &:hover{
+                color:$black-color;
+            }
+        }
+    }
+}
+
+.header{
+    width: 100%;
+    height: 100vh;
+    background-size: cover !important;
+    background-position: center !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    h1{
+        @include typographyStyle($montserrat,71px ,700 ,62.7px ,$white-color );
+        width:50%;
+        margin:0 auto;
+        text-align: center;
+        position: relative;
+        z-index: 50;
+       
+      
+        @media(max-width: 1200px){
+            @include typographyStyle($montserrat,45px ,700 ,35.7px ,$white-color );
+        }
+        @media(max-width: 776px){
+            @include typographyStyle($montserrat,40px ,700 ,35.7px ,$white-color );
+        }
+        @media(max-width: 576px){
+            @include typographyStyle($montserrat,30px ,700 ,35.7px ,$white-color );
+        }
+    }
+    h3{
+        @include typographyStyle($montserrat,24px ,300 ,18px ,$white-color );
+    }
+    .bars{
+        width:10000px;
+        height: 250px;
+        background: rgba(#5e15eb,0.8);
+        position: absolute;
+       
+        transform: translate(-4106px,350px) rotate(-35deg);
+        @media(max-width:576px){
+            transform: translate(-4106px,-110px) rotate(-35deg);
+        }
+        @media(max-width:766px){
+            transform: translate(-4106px,-110px) rotate(-35deg);
+        }
+        @media(max-width:1200px){
+            transform: translate(-4106px,0px) rotate(-35deg);
+        }
+    }
+    .header-content{
+        z-index: 5;
+    }
+}
+
+.adnav{
+    position: absolute;
+    width:100%;
+    text-align: center;
+    z-index: 5;
+}
+
+.introduction{
+    width:100%;
+    padding:4rem 0;
+    .introduction__container{
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+        z-index: 15;
+        padding-bottom: 20rem;
+        @media(max-width:1200px){
+            padding-bottom: 10rem;
+        }
+        @media(max-width:992px){
+            padding-bottom: 60rem;
+        }
+        @media(max-width:576px){
+            padding-bottom: 30rem;
+        }
+        & > div{
+            width:25%;
+        }
+        img{
+            width:50px;
+        }
+        ul{
+            list-style-type: disc;
+        }
+        .intro-section{
+            padding:0 60px;
+           
+          h3{
+            @include typographyStyle($montserrat,16px ,500 ,19.2px ,$gray-font-color );
+          }
+          h2{
+            @include typographyStyle($montserrat,20px ,600 ,24px ,$black-color );
+          }
+          p{
+            @include typographyStyle($montserrat,14px ,400 ,21px ,$gray-font-color );
+          }
+          @media(max-width: 992px){
+            width:50%;
+        }
+          @media(max-width: 766px){
+            width:100%;
+        }
+         @media(max-width: 576px){
+             width:100%;
+         }
+        }
+        .bussiness ,.finance,.technology{
+            padding:0 50px;
+            h2{
+                @include typographyStyle($montserrat,20px ,600 ,24px ,$black-color );
+                padding-top: 15px;
+              }
+              a{
+                @include typographyStyle($montserrat,14px ,400 ,24px ,$black-color );
+                text-decoration: none;
+                &:hover{
+                    color:#ffcd05;
+                }
+              }
+              @media(max-width: 992px){
+                width:50%;
+            }
+              @media(max-width: 766px){
+                width:100%;
+            }
+              @media(max-width: 576px){
+                width:100%;
+                margin-top: 20px;
+            }
+        }
+    }
+   
+}
+.home-about{
+    width:100%;
+    background:rgba(248,248,248,1);
+    .img-container{
+        position: relative;
+        img{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+    }
+    .about-container{
+        padding:3rem 4rem;
+       img{
+           width: 50px;
+       }
+       h4{
+           padding:2rem 0;
+           @include typographyStyle($montserrat,16px ,500 ,19.2px ,$gray-font-color );
+           letter-spacing: 2px;
+       }
+       h2{
+        @include typographyStyle($montserrat,30px ,900 ,36px ,rgb(37,37,41) );
+        letter-spacing: 2px;
+       }
+        .acoording-container{
+            margin-top: 2rem;
+            .card{
+                border-top:1px solid #e8e8e8;
+                border-radius: 0;
+                .btn-link{
+                    color:$black-color;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
+.road{
+    width: 100%;
+    height: 300px;
+    background: url('../images/ctp.jpg');
+}
+.testmonial{
+    width: 100%;
+    padding:2rem 0;
+    .testimonal-container{
+        text-align: center;
+        margin-top: -200px;
+        background: $white-color;
+        border-radius: 8px;
+        padding-top: 2rem;
+        -webkit-box-shadow: 2px 6px 35px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 2px 6px 35px 0px rgba(0,0,0,0.75);
+box-shadow: 2px 6px 35px 0px rgba(0,0,0,0.75);
+        h3{
+            @include typographyStyle($montserrat,24px ,500 ,28.8px ,$black-color );
+        }
+    }
+    .testimonial-wrraper{
+        padding:4rem 0;
+        
+        img{
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 50%;
+            margin: 0 auto;
+           
+        }
+        p{
+            margin-top: 2rem;
+            padding:2rem;
+            @include typographyStyle($montserrat,16px ,300 ,28px ,$gray-font-color );
+        }
+    }
+}
