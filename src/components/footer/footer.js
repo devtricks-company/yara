@@ -4,6 +4,7 @@ const Footer = () => {
   return (
     <div>
       <h1>footer</h1>
+    <h2>this page is about footer</h2>
     </div>
   )
 }
